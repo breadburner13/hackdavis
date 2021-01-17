@@ -1,33 +1,13 @@
-.header {
-    padding: 10px;
-    text-align: center;
-    background: #EFF6E0;
-    color: white;
-    font-size: 15px;
-  }
+
 
 body {
-    background-color: #5D795C;
-  }
-  
-  h1 {
-    font-family: "Helvetica neue";
-    font-weight: 700; 
-    color: white;
-    margin-left: 20px;
-  }
-
-  p {
-    font-family: "Helvetica neue";
-    font-weight: 400; 
-    color: white;
+    background-color: #8FB88D;
   }
 
   .splash-container {
-    background: #5D795C;
+    background: #8FB88D;
     z-index: 1;
     overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
     width: 100%;
     height: 88%;
     top: 0;
@@ -36,7 +16,6 @@ body {
 }
 
 .title {
-    /* absolute center .splash within .splash-container */
     width: 80%;
     height: 50%;
     margin: auto;
@@ -47,7 +26,6 @@ body {
     
 }
 
-/* This is the main heading that appears on the blue section */
 .title-head {
     font-size: 50px;
     font-weight: bold;
@@ -61,7 +39,7 @@ body {
     font-weight: 400; 
 }
 
-/* This is the subheading that appears on the blue section */
+
 .title-subhead {
     color: white;
     letter-spacing: 0.05em;
@@ -80,6 +58,6 @@ body {
   padding: 15px 0;
   font-family: "Helvetica neue";
   font-weight: 700;
-  color: #5D795C;
+  color: #8FB88D;
   border-radius: 25px;
 }
