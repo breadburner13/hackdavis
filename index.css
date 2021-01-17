@@ -15,8 +15,18 @@ body {
     position: fixed !important;
 }
 
-img {
-    border-radius: 50%;
+img.img1 {
+    
+}
+
+img.img2 {
+    height: auto; 
+    width: auto; 
+    max-width: 380px; 
+    max-height: 380px;
+    position: absolute;
+    left: 900px;
+    top: -10px;
 }
 
 .title {
