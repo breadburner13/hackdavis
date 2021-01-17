@@ -68,14 +68,18 @@ body {
     opacity: 0.8;
 }
 
-.button-container {
+.button-start {
   background: white;
   z-index: 1;
   overflow: hidden;
-  /* The following styles are required for the "scroll-over" effect */
-  width: 10%;
-  height: 5%;
-  top: 0;
-  left: 0;
-  position: fixed !important;
+  position: center;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  height: 30xpx;
+  padding: 15px 0;
+  font-family: "Helvetica neue";
+  font-weight: 700;
+  color: #5D795C;
+  border-radius: 25px;
 }
