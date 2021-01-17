@@ -1,6 +1,7 @@
 
 function showInput() {
     var tests = JSON.parse(localStorage.getItem('tests'));
+    // tests.style.color = '#fff';
     //localStorage.removeItem('tests');
     for (var i=0; i<tests.length; i++) {
         console.log('showin');
