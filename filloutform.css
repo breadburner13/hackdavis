@@ -1,0 +1,18 @@
+body {
+    background-color: #8FB88D;
+  }
+
+  h4 {
+    font-family: "Helvetica neue";
+    font-weight: 400; 
+    color: white;
+    font-size: 20px;
+  }
+
+  button {
+    font-family: "Helvetica neue";
+    font-weight: 400; 
+    color:  #8FB88D;
+    font-size: 20px;
+    background-color: white;
+  }

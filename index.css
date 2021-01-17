@@ -1,7 +1,7 @@
 
 
 body {
-    background-color: #8FB88D;
+    background-color:  #8FB88D;
   }
 
   .splash-container {
@@ -13,6 +13,10 @@ body {
     top: 0;
     left: 0;
     position: fixed !important;
+}
+
+img {
+    border-radius: 50%;
 }
 
 .title {
