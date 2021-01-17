@@ -1,18 +1,24 @@
 body {
-    background-color: #90C8EC;
-  }
+  background-image: url(images/Sky\ Blue\ Backgrounds.jpg);
+}
 
   h4 {
-    font-family: "Helvetica neue";
+    font-family: "Questrial";
     font-weight: 400; 
     color: white;
-    font-size: 20px;
+    font-size: 30px;
   }
 
   button {
-    font-family: "Helvetica neue";
+    font-family: "Questrial";
     font-weight: 400; 
-    color:  #90C8EC;
+    color: #90C8EC;
     font-size: 20px;
     background-color: white;
+    position: absolute;
+    top: 200px;
+  }
+
+  text {
+    color: white;
   }

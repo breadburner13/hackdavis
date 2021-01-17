@@ -23,7 +23,8 @@ body {
     border: 3px solid white;
     border-radius: 5px;
     line-height: 1em;
-    /* position: absolute; */
+    padding: 0 1em;
+    margin-top: 1em;
   }
 
   h4 {
@@ -35,13 +36,36 @@ body {
     
   }
 
-
-
   .column {
     float: left;
     width: 100%;
-    padding: 10px;
+    /* padding-top: -10px; */
+    
     height: 300px; 
     
   }
-  
+
+  button {
+    font-family: "Questrial";
+    font-weight: 400; 
+    color:  #90C8EC;
+    font-size: 20px;
+    background-color: white;
+    
+  }
+
+  .submit {
+    position: absolute;
+    
+    top: 400px;
+
+  }
+
+  label {
+    color: white;
+    font-family: "Questrial";
+    font-weight: 400; 
+    font-size: 20px;
+    /* position: absolute; */
+
+  }

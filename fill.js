@@ -7,11 +7,16 @@ function showInput() {
         var x = document.createElement("Input");
         x.setAttribute("type", "text");
         x.setAttribute("value", "...");
+        
         var y = document.createElement("P");
         var text = document.createTextNode(tests[i]);
+        // text.style["color"] = "purple";
+        // text.setAttribute("style", "color:white");
+        // text.style.color = '#fff';
         y.appendChild(text);
         document.body.appendChild(text);
         document.body.appendChild(x);
+        
     }
 }
 

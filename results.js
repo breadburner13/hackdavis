@@ -1,3 +1,10 @@
+var gender = JSON.parse(localStorage.getItem('gender'));  // creates global variable gender, a string with either "male" or "female"
+localStorage.removeItem('gender');
+var inputs = JSON.parse(localStorage.getItem('inputs'));  // creates global variable inputs, a list of the user inputs for the tests
+localStorage.removeItem('inputs'); 
+var tests = JSON.parse(localStorage.getItem('tests'));  // creates global variable tests, a list of strings of the tests the user checked. 
+localStorage.removeItem('tests');
+
 function displayInput() {
     var inputs = JSON.parse(localStorage.getItem('inputs')); //getItem requires the key of the object you want to access 
     localStorage.removeItem('inputs'); // deletes the key 
@@ -11,23 +18,22 @@ function displayInput() {
         y.appendChild(text);
         document.body.appendChild(text); // Appends the text created above to results.html 
     }
+    displayResults();
 }
 
-var testNames = ["HBA1C", "CBC", "CMP", "Lipid Panel", "Prostate Surface Antigen (PSA)", "CA19", "Sexually", "Urine Toxicology", "Urinalysis", "C-reactive Protein", "Liver Panel", "D Dimer", "Influenza Panel", "COVID"]
+var testNames = ["HBA1C", "CBC", "CMP", "Lipid Panel"]
 
 class testClass {
     constructor(health, symptoms, causeRisks, waysToImprov, source){
         this.health = health;
         this.symptoms = symptoms;
         this.causeRisks = causeRisks;
-        this.waysToImprov = waysToImprov;
-        this.source = source;
+        this.waysToImprov = waysToImprove;
     }
 
 }
 
 function HBA1C(value){
-
 var health;  
 var symptoms;
 var causeRisks;
@@ -56,15 +62,13 @@ var source;
         //source = "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/#:~:text=A%20hemoglobin%20A1c%20(HbA1c)%20test%20measures%20the%20amount%20of%20blood,the%20rest%20of%20your%20body.https://healingblendsglobal.com/blogs/condition-specific/causes-and-risks-of-high-hba1c"
 
     }
-    return (var HBA1C = new testClass(health, symptoms, causeRisks, waysToImprov, source));
+    var HBA1Cobj = new testClass(health, symptoms, causeRisks, waysToImprov, source)
+    return (HBA1Cobj);
 }
+
 function CBC(RedBloodCell, WhiteBloodCell, Hemoglobin, Hematocrit, Platelet, Gender){
-    //var redBloodHealth, whiteBloodHealth, hemoHealth, HemaHealth, PlateHealth; 
-    var Health;
-    var symptoms;
-    var causeRisks;
-    var waysToImprov;
-    var source; 
+    var RBHealth, RBsymptoms, RBcauseRisks, RBwaysToImprov, WBHealth, WBsymptoms, WBcauseRisks, WBwaysToImprov, HemoHealth, Hemosymptoms, HemocauseRisks, HemowaysToImprov, HemaHealth, Hemasymptoms, HemacauseRisks, HemawaysToImprov, PHealth, Psymptoms, PcauseRisks, PwaysToImprov; 
+   
 
     if(Gender === "Male"){
         if(RedBloodCell < 4.35) {
@@ -204,29 +208,207 @@ function CBC(RedBloodCell, WhiteBloodCell, Hemoglobin, Hematocrit, Platelet, Gen
             WBsymptoms = "Usually detected with a blood draw"
             WBcauseRisks = "Smoking, bone marrow cancer, leukemia, inflammatory diseases, stress, tissue damage, pregnancy, and asthma"
         } 
-        var CBC
-        CBC.RBHealth = RBHealth;
-        CBC.WBHealth = WBHealth;
-        CBC.
-
-
-    return(2);
+        var CBCobj = {
+            RBResults: {
+                RBHealth, RBsymptoms, RBcauseRisks, RBwaysToImprov
+            },
+            WBResults: {
+                WBHealth, WBsymptoms, WBcauseRisks, RBwaysToImprov
+            },
+            HemoResults: {
+                HemoHealth, Hemosymptoms, HemocauseRisks, HemowaysToImprov
+            },
+            HemaResults: {
+                HemaHealth, Hemasymptoms, HemacauseRisks, HemawaysToImprov
+            },
+            PResults: {
+                PHealth, Psymptoms, PcauseRisks, PwaysToImprov
+            }
+         
+        }
+        
+    return(CBCobj);
  }
     
+function CMP(glucose, calcium, sodium, potassium){
+    var GHealth, Gsymptoms, GcauseRisks, GwaysToImprov, CHealth, Csymptoms, CcauseRisks, CwaysToImprov, SHealth, Ssymptoms, ScauseRisks, SwaysToImprov, PHealth, Psymptoms, PcauseRisks, PwaysToImprov; 
+   
+        if(glucose < 70) {
+            GHealth = "Under reference range"
+            Gsymptoms = "Irregular heartbeat, fatigue, anxiety, and excessive sweating"
+            GcauseRisks = "Not enough sugar intake, endocrine disorders, hepatitis, and certain medications"
+            GwaysToImprov = "Be mindful with sugar intake and keep snacks on hand, such as granola bars, fresh fruits, fruit juice and etc. "
+        }
+        else if(glucose >= 70 && glucose < 99){
+            GHealth = "Normal"
+        }
+        else {
+            GHealth = "Over reference range"
+            Gsymptoms = "Frequent thirst, urination, blurry vision, and constant fatigue"
+            GcauseRisks = "Obesity, high BMI, high blood pressure, little to no physical activity"    
+            GwaysToImprov = "Less carbs and more protein; frequent exercise, weight loss, medications, manage stress and mental health"
+        }
+        if (calcium < 8.6){
+            CHealth = "Under reference range"
+            Csymptoms = ""
+            CcauseRisks = ""
+            CwaysToImprov = ""
+        }
+        else if (calcium >= 8.6 && calcium <= 10.2){
+            CHealth = "Normal"
+        }
+        else {
+            CHealth = "Over reference range"
+            Csymptoms = ""
+            CcauseRisks = ""
+            CwaysToImprov = ""
+        }
+        if(sodium < 136){
+            SHealth = "Under reference range"
+            Ssymptoms = ""
+            ScauseRisks = ""
+            SwaysToImprov = ""
+        }
+        else if(sodium >= 136 && sodium <= 145){
+            SHealth = "Normal"
+        }
+        else {
+            SHealth = "Over reference range"
+            Ssymptoms = ""
+            ScauseRisks = ""
+            SwaysToImprov = ""
+        }
+        if(potassium < 3.5){
+            PHealth = "Under reference range"
+            Psymptoms = "Bleeding found in urine, stool, rectum, gums, nose bleeds, and any bleeding that extends for a long time or does not stop"
+            PcauseRisks = "Cancer treatment, medications, immune system attacks its own healthy tissues"
+            PwaysToImprov = "Refrain from conducting activites that involve contact that can cause bruising or bleeding, less alcohol. For more severe cases, you might need: blood transfusions, steroids, remove your spleen, medication to surpress immune system"
+        }
+        else if(potassium >= 3.5 & potassium <= 5.1){
+            PHealth = "Normal"
+        }
+        else{
+            PHealth = "Over in reference range"
+            Psymptoms = "Usually no symptoms, but can cause blood clots"
+            PcauseRisks = "Unknown. Research speculate that there is a mutation in the gene that handles cell growth"
+            PwaysToImprov = "Doctors might recommend low dose aspirin or prescribing medications that reduce platelet production"
+        }
+        var CBCobj = {
+            GResults: {
+                GHealth, Gsymptoms, GcauseRisks, GwaysToImprov
+            },
+            CResults: {
+                CHealth, Csymptoms, CcauseRisks, CwaysToImprov
+            },
+            SResults: {
+                SHealth, Ssymptoms, ScauseRisks, SwaysToImprov
+            },
+            PResults: {
+                PHealth, Psymptoms, PcauseRisks, PwaysToImprov
+            }
+         
+        }
+    return (CBCojb);
+}
+
+function lipidPanel(chol, LDlipo, HDlipo, trig){
+    var cholHealth, cholsymptoms, cholcauseRisks, cholwaysToImprov, LDHealth, LDsymptoms, LDcauseRisks, LDwaysToImprov, HDHealth, HDsymptoms, HDcauseRisks, HDwaysToImprov, PHealth, Psymptoms, PcauseRisks, PwaysToImprov; 
+   
+        if(glucose < 70) {
+            GHealth = "Under reference range";
+            Gsymptoms = "Fatigue, high heart rate(tachycardia), headaches, pale skin, restlessness, and irregular breathing";
+            GcauseRisks = "Anemia, leukemia, malnutrition, pregnancy, thyroid disease, bone marrow cancer, bleeding, red blood cells dying or STEM blood cells dying";
+            GwaysToImprov = "Lessen amount of red meat or iron that you eat, hydrate, refrain from consuming caffeine or alcohol, and stop smoking"
+        }
+        else if(glucose >= 70 && glucose <= 99){
+            GHealth = "Normal"
+        }
+        else {
+            GHealth = "Over reference range"
+            Gsymptoms = "Fatigue, joint pain, trouble sleeping, itchiness, and tenderness on hands and feet"
+            GcauseRisks = "Smoking, congenital heart disease, not enough water, overproduction of red blood cells, and kidney cell cancer"    
+            GwaysToImprov = "Consume more iron-rich food, increase consumption of copper, and get more vitamin B-12 foods"
+        }
+        if (calcium < 8.6){
+            CHealth = "Under reference range"
+            Csymptoms = "Feeling dizzy, weak, have pale skin, cold extremeties, liver disorder and urinary tract infections"
+            CcauseRisks = "Different version of anemia, liver disorder, cancer, deficient in iron, body does not make enough hemoglobin (thalassemia)"
+            CwaysToImprov = "Eat food that contain iron and folate. Iron foods are: shellfish, beef, broccoli, spinach, and etc. Folate foods are beef, spinach, avocado, lettuce, rice and etc. Can also consider taking iron supplements if recommended by doctor"
+        }
+        else if (calcium >= 8.6 && calcium <= 10.2){
+            CHealth = "Normal"
+        }
+        else {
+            CHealth = "Over reference range"
+            Csymptoms = "Headache, dizziness, frequent sweating, painful joint pains, yellow pigment to eyes and skin (jaundice)"
+            CcauseRisks = "Living in high areas, tobacco usage, heart or lung disease, drug abuse"
+            CwaysToImprov = "Medication or have blood drained to a bag or container"
+        }
+        if(sodium < 136){
+            SHealth = "Under reference range"
+            Ssymptoms = "fatigue, shortness of breath, headaches, and heavy menustral cycles"
+            ScauseRisks = "Internal and external bleeding, dying red blood cells, less red blood cells produced, diet problems, drinking too much fluids"
+            SwaysToImprov = "Typically, no action is necessary if hematocrit levels are slightly abnormal. Low hematocrit level individuals might need to intervention and high level individuals might need remove some of their blood. Consult a doctor if unsure."
+        }
+        else if(sodium >= 136 && sodium <= 145){
+            SHealth = "Normal"
+        }
+        else {
+            SHealth = "Over reference range"
+            Ssymptoms = "Headache and fatigue"
+            ScauseRisks = "Thirst, not enough oxygen, lung disease, and over production of red blood cells"
+            SwaysToImprov = "Typically, no action is necessary if hematocrit levels are slightly abnormal. Low hematocrit level individuals might need to intervention and high level individuals might need remove some of their blood. Consult a doctor if unsure."
+        }
+        if(potassium < 3.5){
+            PHealth = "Under reference range"
+            Psymptoms = "Bleeding found in urine, stool, rectum, gums, nose bleeds, and any bleeding that extends for a long time or does not stop"
+            PcauseRisks = "Cancer treatment, medications, immune system attacks its own healthy tissues"
+            PwaysToImprov = "Refrain from conducting activites that involve contact that can cause bruising or bleeding, less alcohol. For more severe cases, you might need: blood transfusions, steroids, remove your spleen, medication to surpress immune system"
+        }
+        else if(potassium >= 3.5 & potassium <= 5.1){
+            PHealth = "Normal"
+        }
+        else{
+            PHealth = "Over in reference range"
+            Psymptoms = "Usually no symptoms, but can cause blood clots"
+            PcauseRisks = "Unknown. Research speculate that there is a mutation in the gene that handles cell growth"
+            PwaysToImprov = "Doctors might recommend low dose aspirin or prescribing medications that reduce platelet production"
+        }
+}
 
 
 
-for (let x=1; x < tests.length; x++) {
-    if (tests[x] === testNames[0]){
-        HBA1C(intputs[x]);
-    }
-    if (tests[x] === testNames[1]){
-        CBC(intputs[x]);
-    }
-    if (tests[x] === testNames[2]){
-        CMP(intputs[x]);
-    }
-    if (tests[x] === testNames[3]){
-        lipidPanel(intputs[x])
-    }   
+
+    // for (let x=1; x < tests.length; x++) {
+    //     if (tests[x] === testNames[0]){
+    //         HBA1C(intputs[x]);
+    //     }
+    //     if (tests[x] === testNames[1]){
+    //         CBC(RBValue, WBValue, HemoValue, HemaValue, PValue, Gender);
+    //     }
+    //     if (tests[x] === testNames[2]){
+    //         CMP(GVal, CVal, SVal, PVal);
+    //     }
+    //     if (tests[x] === testNames[3]){
+    //         lipidPanel(intputs[x])
+    //     }   
+    // }
+
+var value1 = "string1"
+var value2 = "string2"
+var value3 = "string3"
+//Print value1, 2, and 3 to website
+function displayResults() {
+    var val1p = document.createElement("P");
+    var val1text = document.createTextNode(value1 + "    ");
+    val1p.appendChild(val1text);
+    document.body.appendChild(val1text);
+    var val2p = document.createElement("P");
+    var val2text = document.createTextNode(value2 + "     ");
+    val2p.appendChild(val2text);
+    document.body.appendChild(val2text);
+    var val3p = document.createElement("P");
+    var val3text = document.createTextNode(value3);
+    val3p.appendChild(val3text);
+    document.body.appendChild(val3text);
 }
