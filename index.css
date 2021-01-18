@@ -1,11 +1,6 @@
 
 
-body {
-    background-color:  #90C8EC;
-  }
-
   .splash-container {
-    background: #90C8EC;
     z-index: 1;
     overflow: hidden;
     width: 100%;
@@ -16,41 +11,49 @@ body {
 }
 
 img.img1 {
-    
+    position: absolute;
+    left: 200px;
+    top: 235px;
+    overflow: hidden;
+    width: 15%;
+    height: 30%;
 }
 
 img.img2 {
-    height: auto; 
-    width: auto; 
-    max-width: 380px; 
-    max-height: 380px;
     position: absolute;
-    left: 900px;
-    top: -10px;
+    left: 1050px;
+    top: 234px;
+    overflow: hidden;
+    width: 15%;
+    height: 30%;
 }
 
 .title {
+    font-family: "Questrial";
     width: 80%;
     height: 50%;
     margin: auto;
     position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    top: 20px; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
     
 }
 
 .title-head {
-    font-size: 50px;
+    font-size: 80px;
     font-weight: bold;
     color: white;
     border: 3px solid white;
-    padding: 1em 1.6em;
+    padding: 0.2em 0.5em; /* padding is for box width and height */
+    width: 40%;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
-    font-family: "Helvetica";
-    font-weight: 400; 
+    font-family: "Questrial"; 
+    position: absolute;
+    left: 300px; /* take these out if keeping original box */
+    top: 70px;
 }
 
 
@@ -58,8 +61,16 @@ img.img2 {
     color: white;
     letter-spacing: 0.05em;
     opacity: 0.8;
-    font-family: "Helvetica";
+    font-family: "Questrial";
     font-weight: 700;
+    font-size: 20px;
+    position: absolute;
+    left: 100px; /* take these out if keeping original box */
+    top: 300px;
+    /* text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-decoration-thickness: 3px; */
+    /* text-align: center; */
 }
 
 .button-start {
@@ -72,8 +83,26 @@ img.img2 {
   width: 150px;
   height: 30xpx;
   padding: 15px 0;
-  font-family: "Helvetica";
+  font-family: "Questrial";
   font-weight: 700;
   color: #90C8EC;
   border-radius: 25px;
+  position: absolute; /* take these out if keeping original box */
+  left: 500px;
+  top: 350px;
+  text-decoration: none;
+  font-size: 18px;
 }
+
+#videoBG {
+    position:fixed;
+    z-index: -1;
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+
+}
+

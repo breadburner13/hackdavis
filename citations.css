@@ -1,0 +1,17 @@
+body {
+    background-color: #90C8EC;
+  }
+  
+    h5 {
+      font-family: "Questrial";
+      font-weight: 400; 
+      color: white;
+      font-size: 30px;
+    }
+
+    p {
+        font-family: "Questrial";
+      font-weight: 400; 
+      color: white;
+      font-size: 16px;
+    }

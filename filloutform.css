@@ -1,5 +1,5 @@
 body {
-  background-image: url(images/Sky\ Blue\ Backgrounds.jpg);
+  background-color: #90C8EC;
 }
 
   h4 {
@@ -15,10 +15,29 @@ body {
     color: #90C8EC;
     font-size: 20px;
     background-color: white;
-    position: absolute;
-    top: 200px;
-  }
+    position: relative;
+    border: 3px solid #3D627A;
+    /* top: 200px; */
+}
 
   text {
     color: white;
+  }
+
+  input {
+    /* position: relative; */
+    border: 2px solid #3D627A;
+    
+  }
+
+  img.img1 {
+    position: absolute;
+    left: 300px;
+    top: -105px;
+    overflow: hidden;
+    color: rgba(162,182,195,0.82);
+    /* color: #A2B6C3; */
+    /* transform: scaleX(-1); */
+    width: 60%;
+    height: auto;
   }

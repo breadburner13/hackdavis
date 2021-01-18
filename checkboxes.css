@@ -17,6 +17,21 @@ body {
     
   }
 
+  img.img1 {
+    position: absolute;
+    left: 50px;
+    top: 300px;
+  }
+
+  img.img2 {
+    position: absolute;
+    left: 800px;
+    top: 175px;
+    overflow: hidden;
+    width: 39%;
+    height: 75%;
+  }
+
   .checkboxes {
     position: absolute;
     top: 50px;
@@ -57,11 +72,12 @@ body {
   .submit {
     position: absolute;
     
-    top: 400px;
+    top: 420px;
 
   }
 
   label {
+    position: relative;
     color: white;
     font-family: "Questrial";
     font-weight: 400; 
@@ -69,3 +85,5 @@ body {
     /* position: absolute; */
 
   }
+
+

@@ -1,3 +1,32 @@
 body {
-    background-color: #8FB88D;
-  }
+  background-color: #90C8EC;
+}
+
+h1 {
+  font-family: "Questrial";
+  font-weight: 400; 
+  color: white;
+  font-size: 50px;
+}
+
+.button {
+  font-family: "Questrial";
+    font-weight: 400; 
+    color: #90C8EC;
+    font-size: 20px;
+    background-color: white;
+    position: relative;
+    border: 3px solid #3D627A;
+    width: 10%;
+    height: auto;
+    text-align: center;
+}
+
+img.img1 {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  left: 600px;
+  top: -20px;
+  opacity: 0.35;
+}
